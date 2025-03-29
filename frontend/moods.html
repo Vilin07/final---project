@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Stress Relief Platform</title>
+    <link rel="stylesheet" href="mood.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Student Stress Relief Platform</div>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Mood Selection -->
+    <h2>How are you feeling today?</h2>
+
+    <!-- Mood Buttons -->
+    <div class="mood-buttons">
+        <button id="happy-btn">Happy</button>
+        <button id="sad-btn">Sad</button>
+        <button id="angry-btn">Angry</button>
+        <button id="depressed-btn">Depressed</button>
+    </div>
+
+    <!-- Spline 3D Background -->
+    <div class="container">
+        <iframe src="https://my.spline.design/particlenebula-645f1660a138b6ad72082911bef95fa9/" frameborder="0"></iframe>
+    </div>
+
+    <!-- JavaScript for Button Functionality -->
+    <script>
+        // Redirect to respective mood pages
+        document.getElementById("happy-btn").addEventListener("click", function () {
+            window.location.href = "happy.html";
+        });
+
+        document.getElementById("sad-btn").addEventListener("click", function () {
+            window.location.href = "sad.html";
+        });
+
+        document.getElementById("angry-btn").addEventListener("click", function () {
+            window.location.href = "angry.html";
+        });
+
+        document.getElementById("depressed-btn").addEventListener("click", function () {
+            window.location.href = "depressed.html";
+        });
+    </script>
+</body>
+</html>

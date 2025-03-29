@@ -1,0 +1,8 @@
+div{
+    height: 300px;
+    width:300px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: 150px;left:150px
+}

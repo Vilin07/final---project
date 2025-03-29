@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Drawing Board</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        canvas {
+            background-color: white;
+            border: 2px solid black;
+        }
+        .controls {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        button:nth-child(1) {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:nth-child(2) {
+            background-color: #f44336;
+            color: white;
+        }
+        button:nth-child(3) {
+            background-color: #2196F3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button onclick="setMode('draw')">Draw</button>
+        <button onclick="setMode('erase')">Eraser</button>
+        <button onclick="clearCanvas()">Clear</button>
+    </div>
+    <canvas id="drawingBoard" width="800" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById("drawingBoard");
+        const ctx = canvas.getContext("2d");
+        let drawing = false;
+        let mode = 'draw';
+
+        function setMode(newMode) {
+            mode = newMode;
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        canvas.addEventListener("mousedown", () => drawing = true);
+        canvas.addEventListener("mouseup", () => {
+            drawing = false;
+            ctx.beginPath();
+        });
+        canvas.addEventListener("mousemove", draw);
+
+        function draw(event) {
+            if (!drawing) return;
+            ctx.lineWidth = 3;
+            ctx.lineCap = "round";
+            ctx.strokeStyle = mode === 'erase' ? "white" : "black";
+
+            ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gameA.css">
+    <script>
+        // Function to handle the Escape key press
+function handleEscapeKey(event) {
+    if (event.key === "Escape") {
+        // Go back to the previous page
+        window.history.back();
+    }
+}
+
+// Add an event listener for keydown
+document.addEventListener("keydown", handleEscapeKey);
+
+    </script>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="game">
+            <iframe src="https://hexgl.bkcore.com/play/" width="600" height="600"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

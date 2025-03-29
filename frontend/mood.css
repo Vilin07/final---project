@@ -1,0 +1,129 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #1E1E1E, #2B2B2B); /* Gradient background */
+    color: rgb(249, 251, 247);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+    background: white;
+    color: black;
+}
+
+/* Header and General Text */
+h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: rgb(249, 251, 247);
+}
+
+/* Mood Buttons */
+.mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* Space between buttons */
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 80%;
+}
+
+.mood-buttons button {
+    background: rgb(208, 32, 231); /* Matches the platform's orange theme */
+    color: #E8E9EB; /* Light gray text for contrast */
+    border: none;
+    border-radius: 12px; /* Smooth rounded corners */
+    padding: 12px 24px; /* Comfortable padding */
+    font-size: 1.2rem; /* Readable font size */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+    margin-top: 12rem;
+    margin-left: 05rem;
+
+}
+
+.mood-buttons button:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow:0 6px 20px rgba(225, 0, 255, 0.6); /* Deeper shadow on hover */
+}
+
+.mood-buttons button:active {
+    transform: translateY(0); /* Reset lift on click */
+    box-shadow:0 6px 20px rgba(225, 0, 255, 0.6); /* Reset shadow on click */
+}
+
+/* Spline 3D Background */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgb(15, 2, 2);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mood-buttons {
+        gap: 1rem; /* Adjust spacing for smaller screens */
+        padding: 1rem;
+    }
+
+    .mood-buttons button {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 10px 20px;
+    }
+}
